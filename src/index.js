@@ -4,4 +4,13 @@ if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
 
-restaurantWebpage = function () {};
+const restaurantWebpage = (function () {
+  const consoleLogContent = {
+    welcomeMessage: function () {
+      console.log("Spinning up the 'raunt.");
+    },
+  };
+  consoleLogContent.welcomeMessage();
+
+  return consoleLogContent;
+})();
