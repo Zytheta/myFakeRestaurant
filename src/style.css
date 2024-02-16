@@ -47,6 +47,60 @@ h6 {
 }
 
 :root {
-  background-color: black;
-  color: white;
+  color: black;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: url(./background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.header-wrapper {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  gap: 3vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 4ch;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 80vw;
+  background-color: orangered;
+}
+
+.info-card {
+  background-color: yellow;
+  color: black;
+  text-align: center;
+  width: 60vw;
+  height: auto;
+  border-radius: 12px;
+}
+
+#title {
+  font-size: 3rem;
+}
+
+.footer-wrapper {
+  background-color: gainsboro;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.6rem;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
