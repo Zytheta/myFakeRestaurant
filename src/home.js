@@ -21,7 +21,17 @@ const homeModule = {
       ["Welcome to Chris's Shooting Star Restaurant!"]
     );
 
-    const intro = elementCreator.createElement();
+    const intro = elementCreator.createElement(
+      "div",
+      {
+        class: "info-card",
+        id: "intro",
+      },
+      [
+        `Here at Chris's Shooting Star Cafe, we bring you the best of this world's food and more! \n
+      Enjoy a nice hamburger, some fries, and a little something from the skies at our family friendly cafe.`,
+      ]
+    );
 
     const hours = elementCreator.createElement();
 
@@ -29,6 +39,7 @@ const homeModule = {
 
     mainElement.appendChild(mainWrapper);
     mainWrapper.appendChild(title);
+    mainWrapper.appendChild(intro);
   },
 };
 
