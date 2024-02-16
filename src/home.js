@@ -21,13 +21,14 @@ const homeModule = {
       ["Welcome to Chris's Shooting Star Restaurant!"]
     );
 
-    mainElement.appendChild(title);
-
     const intro = elementCreator.createElement();
 
     const hours = elementCreator.createElement();
 
     const location = elementCreator.createElement();
+
+    mainElement.appendChild(mainWrapper);
+    mainWrapper.appendChild(title);
   },
 };
 

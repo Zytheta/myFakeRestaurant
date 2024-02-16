@@ -74,13 +74,22 @@ body {
   padding-left: 4ch;
 }
 
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: 1;
+  justify-content: space-around;
   width: 80vw;
   background-color: orangered;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 .info-card {
