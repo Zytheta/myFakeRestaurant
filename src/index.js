@@ -1,7 +1,8 @@
 import "./style.css";
 import elementCreator from "./elementCreator.js";
 import homeModule from "./home.js";
-// import "./menu.js";
+import menuModule from "./menu.js";
+import contactModule from "./contact.js";
 import Background from "./background.jpg";
 import icon from "./shooting-star.png";
 
@@ -20,11 +21,17 @@ const restaurantWebpage = (function () {
     headerElement: null,
     mainElement: null,
     footerElement: null,
+    homeElement: null,
+    menuElement: null,
+    contactElement: null,
 
     cacheDom: function () {
       this.headerElement = document.querySelector("header");
       this.mainElement = document.querySelector("main");
       this.footerElement = document.querySelector("footer");
+      this.homeElement = document.getElementById("home");
+      this.menuElement = document.getElementById("menu");
+      this.contactElement = document.getElementById("contact");
     },
 
     headerContent: function () {
@@ -48,35 +55,38 @@ const restaurantWebpage = (function () {
         []
       );
 
-      const homeElement = elementCreator.createElement(
-        "div",
+      this.homeElement = elementCreator.createElement(
+        "button",
         {
           class: "header-bar",
+          id: "home",
         },
         ["Home"]
       );
 
-      const menuElement = elementCreator.createElement(
-        "div",
+      this.menuElement = elementCreator.createElement(
+        "button",
         {
           class: "header-bar",
+          id: "menu",
         },
         ["Menu"]
       );
 
-      const contactElement = elementCreator.createElement(
-        "div",
+      this.contactElement = elementCreator.createElement(
+        "button",
         {
           class: "header-bar",
+          id: "contact",
         },
         ["Contact"]
       );
 
       this.headerElement.appendChild(headerWrapper);
       headerWrapper.appendChild(restaurantIcon);
-      headerWrapper.appendChild(homeElement);
-      headerWrapper.appendChild(menuElement);
-      headerWrapper.appendChild(contactElement);
+      headerWrapper.appendChild(this.homeElement);
+      headerWrapper.appendChild(this.menuElement);
+      headerWrapper.appendChild(this.contactElement);
     },
 
     footerContent: function () {
@@ -132,11 +142,33 @@ const restaurantWebpage = (function () {
       footerWrapper.appendChild(backgroundAttribution);
     },
 
+    contentScrubber: function () {
+      while (this.mainElement.firstChild) {
+        this.mainElement.removeChild(this.mainElement.firstChild);
+      }
+    },
+
+    eventListeners: function () {
+      this.homeElement.addEventListener("click", () => {
+        console.log("Home page event fired!");
+        this.contentScrubber();
+        homeModule.fillContent(this.mainElement);
+      });
+
+      this.menuElement.addEventListener("click", () => {
+        console.log("Menu page event fired!");
+        this.contentScrubber();
+        menuModule.fillContent(this.mainElement);
+      });
+    },
+
     init: function () {
       this.cacheDom();
       this.headerContent();
+      this.contentScrubber();
       homeModule.fillContent(this.mainElement);
       this.footerContent();
+      this.eventListeners();
     },
   };
 

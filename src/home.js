@@ -28,18 +28,33 @@ const homeModule = {
         id: "intro",
       },
       [
-        `Here at Chris's Shooting Star Cafe, we bring you the best of this world's food and more! \n
-      Enjoy a nice hamburger, some fries, and a little something from the skies at our family friendly cafe.`,
+        `Here at Chris's Shooting Star Cafe, we bring you the best of this world's food and more! \n Enjoy a nice hamburger, some fries, and a little something from the skies at our family friendly cafe.`,
       ]
     );
 
-    const hours = elementCreator.createElement();
+    const hours = elementCreator.createElement(
+      "div",
+      {
+        class: "info-card",
+        id: "hours",
+      },
+      [`Open every day except Wednesdays from 10 AM to 12AM!`]
+    );
 
-    const location = elementCreator.createElement();
+    const location = elementCreator.createElement(
+      "div",
+      {
+        class: "info-card",
+        id: "location",
+      },
+      [`Located somewhere near you!  Check Google maps to find one.`]
+    );
 
     mainElement.appendChild(mainWrapper);
     mainWrapper.appendChild(title);
     mainWrapper.appendChild(intro);
+    mainWrapper.appendChild(hours);
+    mainWrapper.appendChild(location);
   },
 };
 
