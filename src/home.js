@@ -47,7 +47,9 @@ const homeModule = {
         class: "info-card",
         id: "location",
       },
-      [`Located somewhere near you!  Check Google maps to find one.`]
+      [
+        `Located somewhere nearby!  Check Google maps to find the one nearest you.`,
+      ]
     );
 
     mainElement.appendChild(mainWrapper);

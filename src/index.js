@@ -160,6 +160,12 @@ const restaurantWebpage = (function () {
         this.contentScrubber();
         menuModule.fillContent(this.mainElement);
       });
+
+      this.contactElement.addEventListener("click", () => {
+        console.log("Contact page event fired!");
+        this.contentScrubber();
+        contactModule.fillContent(this.mainElement);
+      });
     },
 
     init: function () {

@@ -127,13 +127,25 @@ main {
   gap: 2vh;
 }
 
-.info-card {
+#contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2vh;
+}
+
+.info-card,
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: yellow;
   color: black;
-  text-align: center;
+  text-align: left;
   width: 60vw;
   height: auto;
   border-radius: 12px;
+  padding: 1vh 2vw 2vh 1vw;
 }
 
 .menu-item {
